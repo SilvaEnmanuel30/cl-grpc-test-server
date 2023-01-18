@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package alert_type;
+
+import "google/protobuf/empty.proto";
+
+service AlertTypeController {
+    rpc UpdateAlertTypeSchedule(AlertTypeScheduleRequest) returns (AlertTypeScheduleResponse) {}
+}
+
+message AlertTypeScheduleResponse {
+    Response response = 1;
+    optional string message = 2;
+
+    enum Response{
+        OK = 0;
+        BAD_REQUEST = 1;
+        INTERNAL_SERVER_ERROR = 2;
+    }
+}
+
+message AlertTypeScheduleRequest {
+    int64 id = 1;
+    string code = 2;
+    Schedule schedule = 3;
+
+    message Schedule {
+        ScheduleDetail monday = 1;
+        ScheduleDetail tuesday = 2;
+        ScheduleDetail wednesday = 3;
+        ScheduleDetail thursday = 4;
+        ScheduleDetail friday = 5;
+        ScheduleDetail saturday = 6;
+        ScheduleDetail sunday = 7;
+
+        message ScheduleDetail {
+            string start_time = 1;
+            string end_time = 2;
+        }
+    }
+}
+
+
+

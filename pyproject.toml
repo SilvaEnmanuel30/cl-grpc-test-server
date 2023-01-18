@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "cl-grpc-test"
+version = "0.1.0"
+description = ""
+authors = ["Enmanuel Silva <enmanuel.silva@spotcloud.io>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+grpcio-tools = "^1.51.1"
+grpcio = "^1.51.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
