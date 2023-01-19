@@ -1,6 +1,7 @@
 import grpc
 import app.schemas.alert.alert_pb2 as alert_pb2
 import app.schemas.alert.alert_pb2_grpc as alert_pb2_grpc
+import yaml
 
 
 class AlertServer(alert_pb2_grpc.AlertTypeControllerServicer):
