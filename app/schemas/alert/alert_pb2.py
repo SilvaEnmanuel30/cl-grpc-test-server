@@ -14,23 +14,27 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x61lert.proto\x12\nalert_type\x1a\x1bgoogle/protobuf/empty.proto\"\xbf\x01\n\x19\x41lertTypeScheduleResponse\x12@\n\x08response\x18\x01 \x01(\x0e\x32..alert_type.AlertTypeScheduleResponse.Response\x12\x14\n\x07message\x18\x02 \x01(\tH\x00\x88\x01\x01\">\n\x08Response\x12\x06\n\x02OK\x10\x00\x12\x0f\n\x0b\x42\x41\x44_REQUEST\x10\x01\x12\x19\n\x15INTERNAL_SERVER_ERROR\x10\x02\x42\n\n\x08_message\"\xe4\x05\n\x18\x41lertTypeScheduleRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12?\n\x08schedule\x18\x03 \x01(\x0b\x32-.alert_type.AlertTypeScheduleRequest.Schedule\x1a\xec\x04\n\x08Schedule\x12L\n\x06monday\x18\x01 \x01(\x0b\x32<.alert_type.AlertTypeScheduleRequest.Schedule.ScheduleDetail\x12M\n\x07tuesday\x18\x02 \x01(\x0b\x32<.alert_type.AlertTypeScheduleRequest.Schedule.ScheduleDetail\x12O\n\twednesday\x18\x03 \x01(\x0b\x32<.alert_type.AlertTypeScheduleRequest.Schedule.ScheduleDetail\x12N\n\x08thursday\x18\x04 \x01(\x0b\x32<.alert_type.AlertTypeScheduleRequest.Schedule.ScheduleDetail\x12L\n\x06\x66riday\x18\x05 \x01(\x0b\x32<.alert_type.AlertTypeScheduleRequest.Schedule.ScheduleDetail\x12N\n\x08saturday\x18\x06 \x01(\x0b\x32<.alert_type.AlertTypeScheduleRequest.Schedule.ScheduleDetail\x12L\n\x06sunday\x18\x07 \x01(\x0b\x32<.alert_type.AlertTypeScheduleRequest.Schedule.ScheduleDetail\x1a\x36\n\x0eScheduleDetail\x12\x12\n\nstart_time\x18\x01 \x01(\t\x12\x10\n\x08\x65nd_time\x18\x02 \x01(\t2\x7f\n\x13\x41lertTypeController\x12h\n\x17UpdateAlertTypeSchedule\x12$.alert_type.AlertTypeScheduleRequest\x1a%.alert_type.AlertTypeScheduleResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x61lert.proto\x12\nalert_type\x1a\x1bgoogle/protobuf/empty.proto\"\xbd\x03\n\x08Schedule\x12\x33\n\x06monday\x18\x01 \x01(\x0b\x32#.alert_type.Schedule.ScheduleDetail\x12\x34\n\x07tuesday\x18\x02 \x01(\x0b\x32#.alert_type.Schedule.ScheduleDetail\x12\x36\n\twednesday\x18\x03 \x01(\x0b\x32#.alert_type.Schedule.ScheduleDetail\x12\x35\n\x08thursday\x18\x04 \x01(\x0b\x32#.alert_type.Schedule.ScheduleDetail\x12\x33\n\x06\x66riday\x18\x05 \x01(\x0b\x32#.alert_type.Schedule.ScheduleDetail\x12\x35\n\x08saturday\x18\x06 \x01(\x0b\x32#.alert_type.Schedule.ScheduleDetail\x12\x33\n\x06sunday\x18\x07 \x01(\x0b\x32#.alert_type.Schedule.ScheduleDetail\x1a\x36\n\x0eScheduleDetail\x12\x12\n\nstart_time\x18\x01 \x01(\t\x12\x10\n\x08\x65nd_time\x18\x02 \x01(\t\"\xbf\x01\n\x19\x41lertTypeScheduleResponse\x12@\n\x08response\x18\x01 \x01(\x0e\x32..alert_type.AlertTypeScheduleResponse.Response\x12\x14\n\x07message\x18\x02 \x01(\tH\x00\x88\x01\x01\">\n\x08Response\x12\x06\n\x02OK\x10\x00\x12\x0f\n\x0b\x42\x41\x44_REQUEST\x10\x01\x12\x19\n\x15INTERNAL_SERVER_ERROR\x10\x02\x42\n\n\x08_message\"\\\n\x18\x41lertTypeScheduleRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12&\n\x08schedule\x18\x03 \x01(\x0b\x32\x14.alert_type.Schedule\"2\n\x1cListAlertTypeScheduleRequest\x12\x12\n\nalert_type\x18\x01 \x03(\t\"G\n\x1dListAlertTypeScheduleResponse\x12&\n\x08schedule\x18\x01 \x03(\x0b\x32\x14.alert_type.Schedule2\xef\x01\n\x13\x41lertTypeController\x12h\n\x17UpdateAlertTypeSchedule\x12$.alert_type.AlertTypeScheduleRequest\x1a%.alert_type.AlertTypeScheduleResponse\"\x00\x12n\n\x15ListAlertTypeSchedule\x12(.alert_type.ListAlertTypeScheduleRequest\x1a).alert_type.ListAlertTypeScheduleResponse\"\x00\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'alert_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _ALERTTYPESCHEDULERESPONSE._serialized_start=57
-  _ALERTTYPESCHEDULERESPONSE._serialized_end=248
-  _ALERTTYPESCHEDULERESPONSE_RESPONSE._serialized_start=174
-  _ALERTTYPESCHEDULERESPONSE_RESPONSE._serialized_end=236
-  _ALERTTYPESCHEDULEREQUEST._serialized_start=251
-  _ALERTTYPESCHEDULEREQUEST._serialized_end=991
-  _ALERTTYPESCHEDULEREQUEST_SCHEDULE._serialized_start=371
-  _ALERTTYPESCHEDULEREQUEST_SCHEDULE._serialized_end=991
-  _ALERTTYPESCHEDULEREQUEST_SCHEDULE_SCHEDULEDETAIL._serialized_start=937
-  _ALERTTYPESCHEDULEREQUEST_SCHEDULE_SCHEDULEDETAIL._serialized_end=991
-  _ALERTTYPECONTROLLER._serialized_start=993
-  _ALERTTYPECONTROLLER._serialized_end=1120
+  _SCHEDULE._serialized_start=57
+  _SCHEDULE._serialized_end=502
+  _SCHEDULE_SCHEDULEDETAIL._serialized_start=448
+  _SCHEDULE_SCHEDULEDETAIL._serialized_end=502
+  _ALERTTYPESCHEDULERESPONSE._serialized_start=505
+  _ALERTTYPESCHEDULERESPONSE._serialized_end=696
+  _ALERTTYPESCHEDULERESPONSE_RESPONSE._serialized_start=622
+  _ALERTTYPESCHEDULERESPONSE_RESPONSE._serialized_end=684
+  _ALERTTYPESCHEDULEREQUEST._serialized_start=698
+  _ALERTTYPESCHEDULEREQUEST._serialized_end=790
+  _LISTALERTTYPESCHEDULEREQUEST._serialized_start=792
+  _LISTALERTTYPESCHEDULEREQUEST._serialized_end=842
+  _LISTALERTTYPESCHEDULERESPONSE._serialized_start=844
+  _LISTALERTTYPESCHEDULERESPONSE._serialized_end=915
+  _ALERTTYPECONTROLLER._serialized_start=918
+  _ALERTTYPECONTROLLER._serialized_end=1157
 # @@protoc_insertion_point(module_scope)

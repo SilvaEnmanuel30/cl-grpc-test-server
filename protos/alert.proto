@@ -6,7 +6,25 @@ import "google/protobuf/empty.proto";
 
 service AlertTypeController {
     rpc UpdateAlertTypeSchedule(AlertTypeScheduleRequest) returns (AlertTypeScheduleResponse) {}
+    rpc ListAlertTypeSchedule(ListAlertTypeScheduleRequest) returns (ListAlertTypeScheduleResponse) {}
 }
+
+
+message Schedule {
+    ScheduleDetail monday = 1;
+    ScheduleDetail tuesday = 2;
+    ScheduleDetail wednesday = 3;
+    ScheduleDetail thursday = 4;
+    ScheduleDetail friday = 5;
+    ScheduleDetail saturday = 6;
+    ScheduleDetail sunday = 7;
+
+    message ScheduleDetail {
+        string start_time = 1;
+        string end_time = 2;
+    }
+}
+
 
 message AlertTypeScheduleResponse {
     Response response = 1;
@@ -23,22 +41,14 @@ message AlertTypeScheduleRequest {
     int64 id = 1;
     string code = 2;
     Schedule schedule = 3;
-
-    message Schedule {
-        ScheduleDetail monday = 1;
-        ScheduleDetail tuesday = 2;
-        ScheduleDetail wednesday = 3;
-        ScheduleDetail thursday = 4;
-        ScheduleDetail friday = 5;
-        ScheduleDetail saturday = 6;
-        ScheduleDetail sunday = 7;
-
-        message ScheduleDetail {
-            string start_time = 1;
-            string end_time = 2;
-        }
-    }
 }
 
 
 
+message ListAlertTypeScheduleRequest {
+    repeated string alert_type = 1;
+}
+
+message ListAlertTypeScheduleResponse{
+    repeated Schedule schedule = 1;
+}

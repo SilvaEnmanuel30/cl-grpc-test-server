@@ -19,12 +19,23 @@ class AlertTypeControllerStub(object):
                 request_serializer=alert__pb2.AlertTypeScheduleRequest.SerializeToString,
                 response_deserializer=alert__pb2.AlertTypeScheduleResponse.FromString,
                 )
+        self.ListAlertTypeSchedule = channel.unary_unary(
+                '/alert_type.AlertTypeController/ListAlertTypeSchedule',
+                request_serializer=alert__pb2.ListAlertTypeScheduleRequest.SerializeToString,
+                response_deserializer=alert__pb2.ListAlertTypeScheduleResponse.FromString,
+                )
 
 
 class AlertTypeControllerServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def UpdateAlertTypeSchedule(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListAlertTypeSchedule(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -37,6 +48,11 @@ def add_AlertTypeControllerServicer_to_server(servicer, server):
                     servicer.UpdateAlertTypeSchedule,
                     request_deserializer=alert__pb2.AlertTypeScheduleRequest.FromString,
                     response_serializer=alert__pb2.AlertTypeScheduleResponse.SerializeToString,
+            ),
+            'ListAlertTypeSchedule': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAlertTypeSchedule,
+                    request_deserializer=alert__pb2.ListAlertTypeScheduleRequest.FromString,
+                    response_serializer=alert__pb2.ListAlertTypeScheduleResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -62,5 +78,22 @@ class AlertTypeController(object):
         return grpc.experimental.unary_unary(request, target, '/alert_type.AlertTypeController/UpdateAlertTypeSchedule',
             alert__pb2.AlertTypeScheduleRequest.SerializeToString,
             alert__pb2.AlertTypeScheduleResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListAlertTypeSchedule(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/alert_type.AlertTypeController/ListAlertTypeSchedule',
+            alert__pb2.ListAlertTypeScheduleRequest.SerializeToString,
+            alert__pb2.ListAlertTypeScheduleResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
