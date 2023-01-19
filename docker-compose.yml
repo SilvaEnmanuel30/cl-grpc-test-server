@@ -1,0 +1,13 @@
+version: '3.2'
+
+services:
+  cl_grpc_visionx_server:
+    container_name: cl_grpc_visionx_server
+    build: .
+    expose:
+      - "50077"
+    restart: always
+    volumes:
+      - "./:/cl_grpc_visionx_server"
+    environment:
+      SERVER_HOST: "50077"
