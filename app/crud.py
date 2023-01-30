@@ -1,6 +1,7 @@
+import logging
 from typing import Union
 from app.models.alert_models import Alert, engine
-from sqlmoel import Session, select, Field, SQLModel
+from sqlmodel import Session, select, Field, SQLModel, insert
 
 
 def get_alerts(alert_type: str)-> Union[Alert, None]:
@@ -14,8 +15,12 @@ def get_alerts(alert_type: str)-> Union[Alert, None]:
             Union[Alert, None]: Alert object or None
     """
     with Session(engine) as session:
-        statement = select(Alert).where(Alert.alert_type == alert_type)
-        alerts = session.exec(statement).first()
+        alerts = None
+        try:
+            statement = select(Alert).where(Alert.alert_type == alert_type)
+            alerts = session.exec(statement).first()
+        except Exception as e:
+            logging.error(f"Error in sql: {e}")
 
         if not alerts:
             return None
