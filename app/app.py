@@ -7,6 +7,7 @@ import app.schemas.alert.alert_pb2 as alert_pb2
 import app.schemas.alert.alert_pb2_grpc as alert_pb2_grpc
 from app.infrastructure.grpc.alert.alert import AlertServer
 
+
 async def serve() -> None:
     server = grpc.aio.server()
     alert_pb2_grpc.add_AlertTypeControllerServicer_to_server(AlertServer(), server)

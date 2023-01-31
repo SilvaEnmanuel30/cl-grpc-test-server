@@ -1,6 +1,7 @@
 from typing import Optional
 from sqlmodel import Field, SQLModel, create_engine
 
+
 class Alert(SQLModel, table=True):
     # id: Optional[int] = Field(default=None, primary_key=True)
     alert_type: str = Field(default=None, primary_key=True)
@@ -8,6 +9,7 @@ class Alert(SQLModel, table=True):
 
 
 engine = create_engine("sqlite:///alerts.db", echo=True)
+
 
 def create_alerts_table() -> bool:
     try:

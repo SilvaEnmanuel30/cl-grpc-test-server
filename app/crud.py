@@ -4,12 +4,12 @@ from app.models.alert_models import Alert, engine
 from sqlmodel import Session, select, Field, SQLModel, insert
 
 
-def get_alerts(alert_type: str)-> Union[Alert, None]:
+def get_alerts(alert_type: str) -> Union[Alert, None]:
     """
         Function that fetch alerts from the database
 
         Args:
-            id (int): id of the alert
+            alert_type (str): type of the alert
         
         Returns:
             Union[Alert, None]: Alert object or None
@@ -44,4 +44,3 @@ def update_alert(a_type, a_schedule):
             session.commit()
         except Exception as e:
             logging.error(f"Error in sql: {e}")
-
