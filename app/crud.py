@@ -28,10 +28,18 @@ def get_alerts(alert_type: str)-> Union[Alert, None]:
         return alerts
 
 
-def update_alert(alert_type, alert_schedule):
+def update_alert(a_type, a_schedule):
     with Session(engine) as session:
         try:
-            alert = Alert(alert_type=alert_type, schedule=alert_schedule)
+            statement = select(Alert).where(Alert.alert_type == a_type)
+            results = session.exec(statement)
+            alert = results.first()
+            if alert:
+                logging.info(f"Alert to update: {alert}")
+                alert.schedule = a_schedule
+            else:
+                logging.info(f"Alert to add: {alert}")
+                alert = Alert(alert_type=a_type, schedule=a_schedule)
             session.add(alert)
             session.commit()
         except Exception as e:
