@@ -26,3 +26,14 @@ def get_alerts(alert_type: str)-> Union[Alert, None]:
             return None
 
         return alerts
+
+
+def update_alert(alert_type, alert_schedule):
+    with Session(engine) as session:
+        try:
+            alert = Alert(alert_type=alert_type, schedule=alert_schedule)
+            session.add(alert)
+            session.commit()
+        except Exception as e:
+            logging.error(f"Error in sql: {e}")
+
